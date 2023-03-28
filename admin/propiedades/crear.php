@@ -1,8 +1,8 @@
 <?php
     require '../../includes/app.php';
     use App\Propiedad;
-use App\Vendedor;
-use Intervention\Image\ImageManagerStatic as Image;
+    use App\Vendedor;
+    use Intervention\Image\ImageManagerStatic as Image;
 
     esAutenticado();
 
