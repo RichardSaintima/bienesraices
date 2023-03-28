@@ -130,6 +130,7 @@ class ActiveRecord{
         }
     }
 
+
     // Validación
     public static function getErrores(){
 
@@ -139,7 +140,7 @@ class ActiveRecord{
     public function validar(){
         static::$errores =[];
         return static::$errores;
-    }
+    } 
 
     // Lista todo las propiedades
     public static function all(){
