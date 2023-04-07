@@ -41,7 +41,7 @@
             <option 
             <?php echo $propiedad->vendedorId === $vendedor->id ? 'selected' : ''; ?>
             value="<?php echo s($vendedor->id); ?>" > 
-            <?php echo s($vendedor->nombre_vend) ." ". s($vendedor->apellido_vend) ;  ?>
+            <?php echo s($vendedor->nombre) ." ". s($vendedor->apellido) ;  ?>
          </option>
         <?php } ?>
     </select>
