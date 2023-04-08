@@ -29,21 +29,20 @@ class ActiveRecord{
         }
     }
 
-
+    // crea un nuevo registro
     public function crear() {
-    
-        // Sanitizar Datos
-        $atributos = $this -> sanitizarDatos();
+        // Sanitizar los datos
+        $atributos = $this->sanitizarDatos();
 
-        // Insertar en base de datos
-        $query = "INSERT INTO " . static::$tabla ." ( ";
+        // Insertar en la base de datos
+        $query = " INSERT INTO " . static::$tabla . " ( ";
         $query .= join(', ', array_keys($atributos));
-        $query .= " ) VALUES(' ";
+        $query .= " ) VALUES (' "; 
         $query .= join("', '", array_values($atributos));
         $query .= " ') ";
 
+        // Resultado de la consulta
         $resultado = self::$bd->query($query);
-        // return $resultado;
         // Mensaje de Exito
         if($resultado){
             // Redireccionar al usuario

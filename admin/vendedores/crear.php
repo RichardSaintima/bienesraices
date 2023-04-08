@@ -17,14 +17,12 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     // Crear una Instancia
     $vendedor = new Vendedor($_POST['vendedor']);
     
-
     // Validar que no haya campos vacios
     $errores = $vendedor->validar();
     
+    // Revisar que el array esta vacio
     if(empty($errores)){ 
-        // Guardar en la bases de datos
         $vendedor->guardar();
-
     }
 }
 

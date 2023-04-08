@@ -1,19 +1,39 @@
 <?php
 
 require '../../includes/app.php';
-
 use App\Vendedor;
-
 esAutenticado();
 
-$vendedor = new Vendedor;
+
+$id = $_GET['id'];
+$id = filter_var($id, FILTER_VALIDATE_INT);
+
+if(!$id){
+    header('Location; /bienesraices/admin/index.php'); 
+}
+
+// Obtener el Array del vendedor
+$vendedor = Vendedor::find($id);
 
 // Arreglo con mensajes de vendedores
 $errores = Vendedor::getErrores();
 
 // Ejecuta el codigo despues de que el usuario envia el formulario
 if($_SERVER['REQUEST_METHOD']==='POST'){
+    // Asignar los Valores
+    $args = $_POST['vendedor'];
+    
+    // Sincronizar en memoria con lo que el usuario escribio 
+    $vendedor-> sincronizar($args);
 
+    // Validacion
+    $errores = $vendedor->validar();
+    
+    if(empty($errores)){ 
+        // Guardar en la bases de datos
+        $vendedor->guardar();
+
+    }
 }
 
 
