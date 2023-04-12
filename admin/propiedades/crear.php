@@ -60,14 +60,14 @@
 
     <main class="contenedor seccion">
         <h1>Crear</h1>
-        <a href="/bienesraices/admin/index.php" class="boton boton-verde"> Volver</a>
+        <a href="/" class="boton boton-verde"> Volver</a>
 
         <?php foreach ($errores as $error): ?>
             <div class="alerta error">
                  <?php echo $error; ?>
             </div>
         <?php endforeach; ?>
-        <form class="formulario" method="POST" action="/bienesraices/admin/propiedades/crear.php" enctype="multipart/form-data">
+        <form class="formulario" method="POST" action="/admin/propiedades/crear.php" enctype="multipart/form-data">
             <?php include '../../includes/templates/formulario_propiedades.php'; ?>
 
             <input type="submit" value="Crear Propidad" class="boton boton-verde">

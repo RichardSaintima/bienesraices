@@ -40,13 +40,13 @@ class ActiveRecord{
         $query .= " ) VALUES (' "; 
         $query .= join("', '", array_values($atributos));
         $query .= " ') ";
-
         // Resultado de la consulta
         $resultado = self::$bd->query($query);
+        // return $resultado;
         // Mensaje de Exito
         if($resultado){
             // Redireccionar al usuario
-            header('location: /bienesraices/admin/index.php?resultado=1');
+            header('location: /admin?resultado=2');
         }
     }
 
@@ -69,7 +69,7 @@ class ActiveRecord{
         // Mensaje de Exito
         if($resultado){
             // Redireccionar al usuario
-            header('location: /bienesraices/admin/index.php?resultado=2');
+            header('location: /admin?resultado=2');
         }
     }
 
@@ -80,7 +80,7 @@ class ActiveRecord{
         $resultado = self::$bd->query($query);
         if($resultado){
             $this->borrarImagen();
-            header('location: /bienesraices/admin/index.php?resultado=3');
+            header('location: /admin?resultado=3');
         }
 
     }
@@ -150,6 +150,17 @@ class ActiveRecord{
 
         return $resultado;
     }
+
+    // Obtiene detrminado número de registros
+    public static function get($cantidad){
+        
+        $query = "SELECT * FROM " . static::$tabla . " LIMIT " . $cantidad;
+
+        $resultado = self::consultarSQL($query);
+
+        return $resultado;
+    }  
+
 
     // Busca un registro propiedad
     public static function find($id){

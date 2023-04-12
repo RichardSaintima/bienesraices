@@ -7,7 +7,7 @@
 
         
     // if(!$auth){
-    //     header('location: /bienesraices/index.php'); 
+    //     header('location: /'); 
     // }
 
     // echo"<pre>";

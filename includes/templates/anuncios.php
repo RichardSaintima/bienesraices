@@ -1,53 +1,46 @@
 <?php
+    use App\Propiedad;
 
-    // Importar la conexion
-    // require __DIR__ .  '/../config/databases.php';
-    $bd = conectarBD();
-
-    // Escribie el query
-    $query= "SELECT * FROM propiedades LIMIT ${limite}";
     
-    // Consultar la  BD
-    $resulta = mysqli_query($bd, $query);
 
+    if($_SERVER['SCRIPT_NAME']=== '/anuncios.php'){
+        $propiedades= Propiedad::all();
+    }else{
+        $propiedades= Propiedad::get(3);
+    }
 ?>
 
     <div class="contenedor-anuncios">
-        <?php while ($propiedad = mysqli_fetch_assoc($resulta)): ?>
+        <?php foreach ($propiedades as $propiedad) { ?>
         <div class="anuncios">
 
-            <img loading="lazy" src="/bienesraices/imagenes/<?php echo $propiedad['imagen']; ?>" alt="Imagen anuncios">
+            <img loading="lazy" src="/imagenes/<?php echo $propiedad->imagen; ?>" alt="Imagen anuncios">
 
             <div class="contenido-anuncio">
-                <h3><?php echo $propiedad['titulo']; ?></h3>
-                <p><?php echo $propiedad['descripcion']; ?></p>
+                <h3><?php echo $propiedad->titulo; ?></h3>
+                <p><?php echo $propiedad->descripcion; ?></p>
 
-                <p class="precio"><?php echo $propiedad['precio']; ?></p>
+                <p class="precio"><?php echo $propiedad->precio; ?></p>
 
                 <ul class="icono-caracteristicos">
                     <li>
                         <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
-                        <p><?php echo $propiedad['wc']; ?></p>
+                        <p><?php echo $propiedad->wc; ?></p>
                     </li>
                     <li>
                         <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="icono estacionamiento">
-                        <p><?php echo $propiedad['estacionamientos']; ?></p>
+                        <p><?php echo $propiedad->estacionamientos; ?></p>
                     </li>
                     <li>
                         <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="icono dormitorio">
-                        <p><?php echo $propiedad['habitaciones']; ?></p>
+                        <p><?php echo $propiedad->habitaciones; ?></p>
                     </li>
                 </ul>
 
-                <a href="anuncio.php?id=<?php echo $propiedad['id']; ?>" class="boton-amarillo-block">
+                <a href="anuncio.php?id=<?php echo $propiedad->id; ?>" class="boton-amarillo-block">
                     ver Propiedad
                 </a>
             </div> <!--Contenido anuncio-->
         </div><!--Anuncio-->
-        <?php endwhile;?>      
+        <?php };?>      
     </div><!---->
-
-<?php
-// Cerrar el BD
-    mysqli_close($bd);
-?>

@@ -1,6 +1,6 @@
 <?php
 
-// declare (strict_types =1);
+declare (strict_types =1);
 
     require 'includes/app.php';
     incluirTemplate('header', $inicio= true)
@@ -33,7 +33,6 @@
         <h2>Casas y Depas en ventas</h2>
             
         <?php
-            $limite=3;
             include 'includes/templates/anuncios.php';
         ?>
 

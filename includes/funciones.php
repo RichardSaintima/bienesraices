@@ -12,7 +12,7 @@ function incluirTemplate(string $nombre,bool $inicio = false){
 function esAutenticado(){
     session_start();
     if(!$_SESSION['login']){
-        header('location: /bienesraices/index.php');
+        header('location: /');
     }
 }
 

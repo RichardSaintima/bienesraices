@@ -56,8 +56,8 @@
         
         <?php }?>
 
-        <a href="/bienesraices/admin/propiedades/crear.php" class="boton boton-verde"> Nueva Propiedad</a>
-        <a href="/bienesraices/admin/vendedores/crear.php" class="boton boton-amarillo"> Nuevo(a) Vendedor</a>
+        <a href="/admin/propiedades/crear.php" class="boton boton-verde"> Nueva Propiedad</a>
+        <a href="/admin/vendedores/crear.php" class="boton boton-amarillo"> Nuevo(a) Vendedor</a>
 
         <h2>Propiedades</h2>
         <table class="propiedades co">
@@ -86,7 +86,7 @@
                             <input type="submit" class="boton-rojo-block" value="Eliminar">
                         </form>
                         
-                        <a href="/bienesraices/admin/propiedades/actualizar.php?id=<?php echo $propiedad->id; ?>" class="boton-verde-block">Actualizar</a>
+                        <a href="/admin/propiedades/actualizar.php?id=<?php echo $propiedad->id; ?>" class="boton-verde-block">Actualizar</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -118,7 +118,7 @@
                             <input type="submit" class="boton-rojo-block" value="Eliminar">
                         </form>
                         
-                        <a href="/bienesraices/admin/vendedores/actualizar.php?id=<?php echo $vendedor->id; ?>" class="boton-verde-block">Actualizar</a>
+                        <a href="/admin/vendedores/actualizar.php?id=<?php echo $vendedor->id; ?>" class="boton-verde-block">Actualizar</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

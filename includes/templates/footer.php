@@ -10,6 +10,6 @@
 
         <p class="copyright">Todo derechos reservado .Stanley <?php echo date("Y")?> &copy;</p>
     </footer>
-    <script src="/bienesraices/build/js/bundle.min.js"></script>
+    <script src="/build/js/bundle.min.js"></script>
 </body>
 </html>

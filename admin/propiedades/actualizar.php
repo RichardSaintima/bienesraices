@@ -13,7 +13,7 @@
     $id = filter_var($id , FILTER_VALIDATE_INT);
 
     if(!$id){
-        header('location: /bienesraices/admin/index.php');
+        header('location: /admin');
     }
 
     // Obtener los datos de la propiedad
@@ -65,7 +65,7 @@
 
     <main class="contenedor seccion">
         <h1>Actualizar Propiedad</h1>
-        <a href="/bienesraices/admin/index.php" class="boton boton-verde"> Volver</a>
+        <a href="/admin" class="boton boton-verde"> Volver</a>
 
         <?php foreach ($errores as $error): ?>
             <div class="alerta error">

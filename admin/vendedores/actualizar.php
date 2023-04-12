@@ -9,7 +9,7 @@ $id = $_GET['id'];
 $id = filter_var($id, FILTER_VALIDATE_INT);
 
 if(!$id){
-    header('Location; /bienesraices/admin/index.php'); 
+    header('Location; /'); 
 }
 
 // Obtener el Array del vendedor
@@ -43,7 +43,7 @@ incluirTemplate('header')
 
 <main class="contenedor seccion">
         <h1>Actualizar Vendedor(a)</h1>
-        <a href="/bienesraices/admin/index.php" class="boton boton-verde"> Volver</a>
+        <a href="/" class="boton boton-verde"> Volver</a>
 
         <?php foreach ($errores as $error): ?>
             <div class="alerta error">
