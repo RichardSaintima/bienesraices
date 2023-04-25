@@ -16,7 +16,7 @@ $passwordHash = password_hash($password, PASSWORD_BCRYPT);
 // Query para creae el usuario
 $query = "INSERT INTO usuarios (email,password) VALUES ( '${email}' , '${passwordHash}' );";
 
-echo $query;
+// echo $query;
 
 // Agregarlo a la BD
 
